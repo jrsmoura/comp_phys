@@ -1,0 +1,36 @@
+import numpy as np
+
+def en_free(n, L):
+    return 2.n*n(np.pi**2)/(L*L)
+
+def rho_free(beta, n, L, x1, x2):
+    rho = np.zeros(n)
+    _temp1 = .0
+    _temp2 = .0
+    for iter in range(n):
+        _temp1 = np.exp(2j*np.pi*iter*(x1 - x2)/L)
+        _temp2 = np.exp(-(beta*2.*n*n*(no.pi**2))/(L*L))
+        rho[iter] = _temp1 * _temp2
+    return np.sum(rho)
+
+N = 8
+beta = 4
+mc_iter = 10**6
+delta = 0.1
+
+x0 = 0.0
+xf = 2.0
+
+path = np.arange(x0, xf, N-1)
+path2 = np.arange(x0, xf, N-1)
+
+k = np.random.randint(0, N-1)
+kp = k + 1
+km = k -1
+
+if km == -1:
+    km = N
+
+
+
+path2[k] = path[k] + np.random.rand(-delta, delta)
