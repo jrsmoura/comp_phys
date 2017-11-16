@@ -1,3 +1,9 @@
+'''
+Calculo das integrais de caminho para um oscilador harmonico
+utilizando um algoritmo de cadeia de Markov
+'''
+
+
 import numpy as np
 
 def en_free(n, L):
